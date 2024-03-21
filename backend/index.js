@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import { login, register } from './controller/auth.js'
 import { addData, getAllData, getData } from './controller/history.js';
-import Redis from 'redis'
+// import Redis from 'redis'
 
 dotenv.config();
 const app = express();
@@ -14,7 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-export const RedisClient = Redis.createClient()
+// export const RedisClient = Redis.createClient()
 
 export const db = mysql.createConnection({
     host: process.env.DBHOST,

@@ -1,4 +1,4 @@
-import { db, RedisClient } from '../index.js'
+import { db } from '../index.js'
 import getResult from '../utils/index.js'
 
 const addData = async (req, res) => {
