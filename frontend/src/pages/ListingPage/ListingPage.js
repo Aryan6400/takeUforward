@@ -4,6 +4,7 @@ import ListingTable from "../../component/Table/Table";
 import { useAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 import { Backdrop, CircularProgress } from "@mui/material";
+import { enqueueSnackbar } from "notistack";
 
 
 function ListingPage() {
@@ -18,9 +19,14 @@ function ListingPage() {
     try {
       const response = await fetch("https://takeuforward-tdne.onrender.com/all-history")
       const result = await response.json()
-      setHistory(result)
+      if (response.status != 200) {
+        enqueueSnackbar(result.message, { variant: "error" })
+      }
+      else {
+        setHistory(result)
+      }
     } catch (error) {
-      console.error(error)
+      enqueueSnackbar(error.message, { variant: "error" })
     } finally {
       setLoading(false)
     }
@@ -39,9 +45,14 @@ function ListingPage() {
         }
       })
       const result = await response.json()
-      setUserHistory(result)
+      if (response.status != 201) {
+        enqueueSnackbar(result.message, { variant: "error" })
+      }
+      else {
+        setUserHistory(result)
+      }
     } catch (error) {
-      console.error(error)
+      enqueueSnackbar(error.message, { variant: "error" })
     } finally {
       setLoading(false)
     }
@@ -50,7 +61,7 @@ function ListingPage() {
   useEffect(() => {
     const auth = localStorage.getItem("coderDetail")
     if (!auth) setLogin(false)
-    if (user) {
+    if (user && login) {
       fetchUserHistory()
     }
     else {
@@ -66,8 +77,8 @@ function ListingPage() {
           <span className={`toggle-tabs ${user ? "" : "toggle-tabs-selected"}`} onClick={() => setUser(false)}>Show all history</span>
         </div>
       </div>
-      {!user && history.length>0 && <ListingTable data={history} user={user} loading={loading} />}
-      {login && user && userHistory.length>0 && <ListingTable data={userHistory} user={user} loading={loading} />}
+      {!user && <ListingTable data={history} user={user} loading={loading} />}
+      {login && user && <ListingTable data={userHistory} user={user} loading={loading} />}
       {!login && user &&
         <div className="login-message">
           <Link to='/login'>Login to see your history</Link>

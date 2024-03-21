@@ -35,11 +35,16 @@ function Login() {
         body: JSON.stringify(data)
       })
       const result = await response.json()
-      localStorage.setItem("coderToken", result.token)
-      localStorage.setItem("coderDetail", JSON.stringify(result.user))
-      setLogin(true)
-      navigate('/')
-      enqueueSnackbar("Logged in successfully!", { variant: "success" })
+      if (response.status != 201) {
+        enqueueSnackbar(result.message, { variant: "error" })
+      }
+      else {
+        localStorage.setItem("coderToken", result.token)
+        localStorage.setItem("coderDetail", JSON.stringify(result.user))
+        setLogin(true)
+        navigate('/')
+        enqueueSnackbar("Logged in successfully!", { variant: "success" })
+      }
     } catch (error) {
       enqueueSnackbar(error.message, { variant: "error" })
     } finally {
@@ -58,11 +63,16 @@ function Login() {
         body: JSON.stringify(data)
       })
       const result = await response.json()
-      localStorage.setItem("coderToken", result.token)
-      localStorage.setItem("coderDetail", JSON.stringify(result.user))
-      setLogin(true)
-      navigate('/')
-      enqueueSnackbar("Registered successfully!", { variant: "success" })
+      if (response.status != 201) {
+        enqueueSnackbar(result.message, { variant: "error" })
+      }
+      else {
+        localStorage.setItem("coderToken", result.token)
+        localStorage.setItem("coderDetail", JSON.stringify(result.user))
+        setLogin(true)
+        navigate('/')
+        enqueueSnackbar("Registered successfully!", { variant: "success" })
+      }
     } catch (error) {
       enqueueSnackbar(error.message, { variant: "error" })
     } finally {

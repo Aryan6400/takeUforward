@@ -25,7 +25,7 @@ function CreatePage() {
     setLoading(true)
     const token = localStorage.getItem("coderToken")
     try {
-      await fetch('https://takeuforward-tdne.onrender.com/history', {
+      const response = await fetch('https://takeuforward-tdne.onrender.com/history', {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -33,8 +33,14 @@ function CreatePage() {
         },
         body: JSON.stringify(data)
       })
-      navigate("/")
-      enqueueSnackbar("Successfully created!", { variant: "success" })
+      const result = await response.json()
+      if (response.status != 201) {
+        enqueueSnackbar(result.message, { variant: "error" })
+      }
+      else {
+        navigate("/")
+        enqueueSnackbar("Successfully created!", { variant: "success" })
+      }
     } catch (error) {
       enqueueSnackbar("Unable to create! Please try after some time!", { variant: "error" })
     } finally {

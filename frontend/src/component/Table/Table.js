@@ -8,7 +8,6 @@ const ListingTable = ({ data=[], user, loading }) => {
     function getTimeStamp(timestamp) {
         const date = new Date(timestamp);
         const currentIST = date.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
-        console.log(currentIST)
         return `${currentIST.split(" ")[1]} ${currentIST.split(" ")[2]}, ${currentIST.split(" ")[0].slice(0, -1)}`
     }
 
@@ -35,7 +34,7 @@ const ListingTable = ({ data=[], user, loading }) => {
                 </div>
                 :
                 <tbody>
-                    {data.map((item, index) => {
+                    {data?.map((item, index) => {
                         return (
                             <tr key={item.id}>
                                 <td onClick={() => handleClick(item)} className={user && "link"}>{!user ? item.name.split(" ")[0] : item.id}</td>

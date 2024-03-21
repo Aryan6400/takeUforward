@@ -10,7 +10,7 @@ function Navbar() {
         localStorage.removeItem("coderToken")
         localStorage.removeItem("coderDetails")
         setLogin(false)
-        navigate('/login')
+        navigate('/')
     }
 
     return (
