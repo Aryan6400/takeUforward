@@ -14,9 +14,9 @@ function Navbar() {
     }
 
     return (
-        <nav style={{ height: "40px", width: "calc(100% - 250px)", background: "#D9D9D9", padding: "10px 125px", display: "flex", alignItems: "center", justifyContent: "space-between", position: "fixed" }}>
-            <span className="navbar-links" onClick={()=>navigate('/')}>takeUforward</span>
-            <ul style={{ display: "flex", gap: "15px", listStyle: "none" }}>
+        <nav>
+            <span className="navbar-links logo" onClick={()=>navigate('/')}>takeUforward</span>
+            <ul>
                 {login && <li className="navbar-links" onClick={() => navigate('/create')}>Create</li>}
                 {!login && <li className="navbar-links" onClick={() => navigate('/login')}>Login</li>}
                 {login && <li className="navbar-links" onClick={logout}>Logout</li>}

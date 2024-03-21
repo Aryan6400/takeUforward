@@ -6,26 +6,32 @@ import Login from './pages/Login/Login';
 import { useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
 import Navbar from './component/Navbar/Navbar';
+import { SnackbarProvider } from 'notistack';
 
 function App() {
-  const {setLogin} = useAuth()
+  const { setLogin } = useAuth()
 
-  useEffect(()=>{
+  useEffect(() => {
     const token = localStorage.getItem('coderToken')
-    if(!token) setLogin(false)
+    if (!token) setLogin(false)
   }, [])
 
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<ListingPage />} />
-          <Route path='/create' element={<CreatePage />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <SnackbarProvider
+      autoHideDuration={2000}
+      maxSnack={3}
+    >
+      <div className="App">
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<ListingPage />} />
+            <Route path='/create' element={<CreatePage />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </SnackbarProvider>
   );
 }
 

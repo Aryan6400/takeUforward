@@ -66,3 +66,10 @@ input:focus{
 .navigate-link:hover{
     border-bottom: 1px solid #5982E3;
 }
+
+.password-box{
+    border: 1px solid rgb(133, 133, 133);
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}

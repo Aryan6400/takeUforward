@@ -29,3 +29,14 @@
     color: white !important;
     grid-area: 5/2/6/3;
 }
+
+.blank-create-page{
+    padding: 120px 125px;
+    width: fit-content;
+    margin: auto;
+    font-size: 1.25rem;
+}
+
+.blank-create-page a{
+    color: #5982E3;
+}

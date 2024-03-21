@@ -16,7 +16,7 @@
     gap: 10px;
     border-radius: 25px;
     padding: 5px;
-    background-color: #d9d9d9;
+    background-color: #c5d2ff;
     /* width: fit-content; */
 }
 
@@ -30,4 +30,15 @@
 .toggle-tabs-selected{
     background-color: #5982E3;
     color: white;
+}
+
+.login-message{
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 1.25rem;
+}
+
+.login-message a{
+    color: #5982E3 !important;
 }
