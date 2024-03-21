@@ -66,8 +66,8 @@ function ListingPage() {
           <span className={`toggle-tabs ${user ? "" : "toggle-tabs-selected"}`} onClick={() => setUser(false)}>Show all history</span>
         </div>
       </div>
-      {!user && <ListingTable data={history} user={user} loading={loading} />}
-      {login && user && <ListingTable data={userHistory} user={user} loading={loading} />}
+      {!user && history.length>0 && <ListingTable data={history} user={user} loading={loading} />}
+      {login && user && userHistory.length>0 && <ListingTable data={userHistory} user={user} loading={loading} />}
       {!login && user &&
         <div className="login-message">
           <Link to='/login'>Login to see your history</Link>
