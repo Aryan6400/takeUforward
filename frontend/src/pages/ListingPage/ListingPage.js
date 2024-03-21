@@ -12,7 +12,7 @@ function ListingPage() {
 
   const fetchAllHistory = async () => {
     try {
-      const response = await fetch("http://localhost:5000/all-history")
+      const response = await fetch("https://takeuforward-tdne.onrender.com/all-history")
       const result = await response.json()
       setHistory(result)
     } catch (error) {
@@ -23,7 +23,7 @@ function ListingPage() {
   const fetchUserHistory = async () => {
     const user = JSON.parse(localStorage.getItem("coderDetail"))
     try {
-      const response = await fetch(`http://localhost:5000/user-history/${user.email}`)
+      const response = await fetch(`https://takeuforward-tdne.onrender.com/user-history/${user.email}`)
       const result = await response.json()
       setUserHistory(result)
     } catch (error) {

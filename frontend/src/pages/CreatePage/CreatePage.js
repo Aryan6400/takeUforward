@@ -21,7 +21,7 @@ function CreatePage() {
     if (data.email == "" || data.language == "" || data.code == "" || data.stdin == "") return
     setLoading(true)
     try {
-      await fetch('http://localhost:5000/history', {
+      await fetch('https://takeuforward-tdne.onrender.com/history', {
         method: "POST",
         headers: {
           "content-type": "application/json"
