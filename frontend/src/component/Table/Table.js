@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Table.css"
 import { CircularProgress } from "@mui/material";
 
-const ListingTable = ({ data, user, loading }) => {
+const ListingTable = ({ data=[], user, loading }) => {
     const navigate = useNavigate()
 
     function getTimeStamp(timestamp) {
