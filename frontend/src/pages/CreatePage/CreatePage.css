@@ -1,0 +1,31 @@
+.create-page{
+    padding: 60px 125px;
+}
+
+.create-form-container{
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    max-width: 800px;
+    gap: 15px;
+    align-items: center;
+}
+
+.create-form-container input{
+    height: 40px;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.create-form-container textarea{
+    font-size: 1rem;
+    resize: none;
+    padding: 15px;
+}
+
+.create-btn{
+    background-color: #5982E3 !important;
+    color: white !important;
+    grid-area: 5/2/6/3;
+}

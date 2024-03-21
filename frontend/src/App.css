@@ -1,0 +1,20 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: verdana;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 4px;
+  padding: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #818589;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}

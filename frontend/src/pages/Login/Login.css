@@ -1,0 +1,68 @@
+.login{
+    padding: 60px 125px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.login-card, .register-card{
+    width: 400px;
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 150px;
+    gap: 20px;
+    padding: 30px;
+    align-items: center;
+}
+
+.register-card{
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.login-card input, .register-card input{
+    height: 40px;
+    font-size: 1rem;
+    padding: 2px 5px;
+}
+
+.password{
+    border: none;
+    width: calc(100% - 34px);
+}
+
+input:focus{
+    outline: none;
+}
+
+.login-card p{
+    grid-area: 4/2/5/3;
+    margin: 0;
+    padding: 0;
+}
+
+.register-card p{
+    grid-area: 5/2/6/3;
+    margin: 0;
+    padding: 0;
+}
+
+.login-btn{
+    grid-area: 3/2/4/3;
+    background-color: #5982E3 !important;
+    color: white !important;
+}
+
+.register-btn{
+    grid-area: 4/2/5/3;
+    background-color: #5982E3 !important;
+    color: white !important;
+}
+
+.navigate-link{
+    color: #5982E3;
+    cursor: pointer;
+}
+
+.navigate-link:hover{
+    border-bottom: 1px solid #5982E3;
+}

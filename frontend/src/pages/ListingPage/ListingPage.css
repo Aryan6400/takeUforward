@@ -1,0 +1,33 @@
+.listing-page{
+    padding: 100px 125px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tabs-group-container{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.tabs-group{
+    display: flex;
+    gap: 10px;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #d9d9d9;
+    /* width: fit-content; */
+}
+
+.toggle-tabs{
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.toggle-tabs-selected{
+    background-color: #5982E3;
+    color: white;
+}
