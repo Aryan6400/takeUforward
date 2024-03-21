@@ -14,7 +14,7 @@ const addData = async (req, res) => {
         const values = [email, language, stdin, code, response.stdout]
         db.query(insertQuery, values, (err, result) => {
             if (err) {
-                res.status(500).json({ message: 'Error inserting into MySQL' });
+                res.status(500).json({ message: 'Error inserting into MySQL', error: err });
                 return;
             }
             const fetchQuery = `SELECT * FROM history WHERE email = ?`;
